@@ -180,11 +180,7 @@ public class ContactManager extends CordovaPlugin {
 
     private void save(JSONArray args) throws JSONException {
         final JSONObject contact = args.getJSONObject(0);
-        this.cordova.getThreadPool().execute(new Runnable(){
-            public void run() {
-                contactAccessor.save(contact);
-            }
-        });
+        contactAccessor.save(contact);
     }
 
     private void search(JSONArray args) throws JSONException
